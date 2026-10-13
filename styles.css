@@ -153,3 +153,10 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
 .shop-strip div{border-right:1px solid var(--line)}
 @media(max-width:850px){.shop-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.shop-strip div:nth-child(3){border-right:0}.shop-strip div:nth-child(4),.shop-strip div:nth-child(5){border-top:1px solid var(--line)}}
 @media(max-width:520px){.shop-strip{grid-template-columns:1fr 1fr}.shop-strip div:nth-child(2){border-right:0}.shop-strip div:nth-child(3){border-right:1px solid var(--line);border-top:1px solid var(--line)}.shop-strip div:nth-child(4){border-right:0;border-top:1px solid var(--line)}.shop-strip div:nth-child(5){grid-column:span 2;border-top:1px solid var(--line)}}
+
+
+/* Marcas de resina incluidas en el catálogo */
+.resin-brand-list{display:flex;flex-wrap:wrap;gap:6px;margin-top:17px}
+.resin-brand-list span{display:inline-flex;align-items:center;justify-content:center;padding:7px 9px;border:1px solid rgba(216,117,45,.38);background:linear-gradient(145deg,rgba(216,117,45,.12),rgba(255,255,255,.02));color:#d9dfe2;font-size:9px;font-weight:800;letter-spacing:.1em;line-height:1.2}
+.resin-brand-list span:nth-child(2){border-color:rgba(191,197,201,.36)}
+.resin-brand-list span:nth-child(3){border-color:rgba(111,164,184,.38)}

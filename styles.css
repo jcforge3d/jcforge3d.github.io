@@ -202,3 +202,16 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
 
 @media(max-width:850px){.category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.category-hero{grid-template-columns:1fr;min-height:auto;padding-top:45px;text-align:center}.category-hero>div:first-child{order:2}.category-hero-badge{order:1;width:190px}.category-hero .lead{margin-left:auto;margin-right:auto}.category-quick-links{justify-content:center}.brand-filter-section{padding-left:25px;padding-right:25px}}
 @media(max-width:520px){.category-grid{grid-template-columns:1fr}.category-art{height:210px}.category-hero{padding-left:20px;padding-right:20px}.category-hero h1{font-size:54px}.brand-filter-section{padding-left:20px;padding-right:20px}.filter-buttons{display:grid;grid-template-columns:1fr 1fr}.filter-button{padding:12px 8px}.category-content{padding:21px}}
+
+
+/* Ficha específica: ELEGOO ABS-Like Resin V3.0 Pro */
+.resin-real-photo-art{background:#f5f5f3}
+.resin-real-photo-art:before{content:none}
+.product-photo{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#f5f5f3}
+.product-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.product-options label{display:flex;flex-direction:column;gap:7px;color:#cbd0d2;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.product-options select{width:100%;min-width:0;padding:10px 8px;border:1px solid #41494f;border-radius:3px;background:#111518;color:#f0f2f3;font:500 12px Montserrat,Arial,sans-serif;letter-spacing:0;text-transform:none;outline-offset:2px}
+.product-availability-note{font-size:10px!important;min-height:auto!important;margin-top:11px!important;color:#929ba0!important;line-height:1.6!important}
+.manufacturer-link{font-size:10px;color:#b6bdc1;text-decoration:underline;text-underline-offset:3px}
+.manufacturer-link:hover{color:var(--copper2)}
+@media(max-width:520px){.product-options{grid-template-columns:1fr 1fr}}

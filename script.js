@@ -16,6 +16,17 @@ document.querySelectorAll('.nav nav a').forEach(a => {
 document.querySelectorAll('.product-cta[data-product]').forEach(link => {
   const product = link.getAttribute('data-product');
   if (product) link.href = `index.html?producto=${encodeURIComponent(product)}#contacto`;
+  // Include selected volume and color when the specific ELEGOO resin card has options.
+  link.addEventListener('click', () => {
+    const card = link.closest('.resin-product');
+    if (!card) return;
+    const volume = card.querySelector('[data-product-volume]')?.value;
+    const color = card.querySelector('[data-product-color]')?.value;
+    if (!volume && !color) return;
+    const details = [product, volume ? `presentación ${volume}` : '', color ? `color ${color}` : '']
+      .filter(Boolean).join(' — ');
+    link.href = `index.html?producto=${encodeURIComponent(details)}#contacto`;
+  });
 });
 
 // Reflect product context when someone reaches the home contact section.

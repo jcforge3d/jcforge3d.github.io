@@ -59,3 +59,31 @@ if (filterButtons.length && resinProducts.length) {
     });
   });
 }
+
+// Galería de fotos de ELEGOO ABS-Like Resin V3.0 Pro.
+const elegooGalleryMain = document.querySelector('#elegoo-gallery-main-image');
+const elegooGalleryCaption = document.querySelector('#elegoo-gallery-caption');
+const elegooGalleryThumbs = [...document.querySelectorAll('.elegoo-gallery-thumb[data-gallery-src]')];
+if (elegooGalleryMain && elegooGalleryThumbs.length) {
+  elegooGalleryThumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const nextSrc = thumb.dataset.gallerySrc;
+      if (!nextSrc) return;
+      elegooGalleryMain.style.opacity = '0.35';
+      const preload = new Image();
+      preload.onload = () => {
+        elegooGalleryMain.src = nextSrc;
+        elegooGalleryMain.alt = thumb.dataset.galleryAlt || 'Imagen del producto ELEGOO ABS-Like Resin V3.0 Pro';
+        elegooGalleryMain.style.opacity = '1';
+        elegooGalleryThumbs.forEach((item) => {
+          const active = item === thumb;
+          item.classList.toggle('is-active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        if (elegooGalleryCaption) elegooGalleryCaption.textContent = thumb.dataset.galleryCaption || '';
+      };
+      preload.onerror = () => { elegooGalleryMain.style.opacity = '1'; };
+      preload.src = nextSrc;
+    });
+  });
+}

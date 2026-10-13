@@ -215,3 +215,23 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
 .manufacturer-link{font-size:10px;color:#b6bdc1;text-decoration:underline;text-underline-offset:3px}
 .manufacturer-link:hover{color:var(--copper2)}
 @media(max-width:520px){.product-options{grid-template-columns:1fr 1fr}}
+
+/* Galería fotográfica de la referencia ELEGOO ABS-Like Resin V3.0 Pro */
+.elegoo-featured-card{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:stretch}
+.elegoo-product-media{min-width:0;padding:18px;display:flex;flex-direction:column;gap:11px;background:linear-gradient(145deg,#171b1e,#0b0d0f);border-right:1px solid var(--line)}
+.elegoo-gallery-main{position:relative;width:100%;aspect-ratio:1/1;max-height:520px;min-height:280px;overflow:hidden;border:1px solid rgba(216,117,45,.28);background:#f3f3f1;display:flex;align-items:center;justify-content:center}
+.elegoo-gallery-main:after{content:"";position:absolute;inset:12px;border:1px solid rgba(27,32,35,.08);pointer-events:none}
+.elegoo-gallery-main .product-photo{display:block;width:100%;height:100%;object-fit:contain;object-position:center;background:#f3f3f1;transition:opacity .16s ease}
+.elegoo-gallery-badge{position:absolute;z-index:2;top:13px;left:13px;max-width:calc(100% - 26px);padding:8px 10px;border:1px solid rgba(216,117,45,.7);background:rgba(12,15,17,.91);color:#f2b27a;font-size:9px;font-weight:800;letter-spacing:.12em}
+.elegoo-gallery-thumbnails{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+.elegoo-gallery-thumb{appearance:none;min-width:0;padding:5px;background:#111518;border:1px solid #343b40;border-radius:2px;color:#bfc5c9;cursor:pointer;text-align:center;transition:border-color .15s ease,background .15s ease,transform .15s ease}
+.elegoo-gallery-thumb:hover{border-color:#9e5b2c;transform:translateY(-2px)}
+.elegoo-gallery-thumb.is-active{border-color:#e58a43;background:#24201c;box-shadow:inset 0 0 0 1px rgba(216,117,45,.16)}
+.elegoo-gallery-thumb img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;background:#f3f3f1;margin-bottom:6px}
+.elegoo-gallery-thumb span{display:block;overflow-wrap:anywhere;font-size:8px;line-height:1.25;font-weight:800;letter-spacing:.01em}
+.elegoo-gallery-caption{min-height:30px;margin:0;color:#9ca5aa;font-size:10px;line-height:1.55}
+.elegoo-featured-info{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start}
+.elegoo-featured-info .product-bottom{margin-top:auto;padding-top:19px}
+.elegoo-featured-info>p:not(.product-category){min-height:auto}
+@media(max-width:850px){.elegoo-featured-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.elegoo-product-media{padding:13px}.elegoo-gallery-thumbnails{gap:5px}.elegoo-gallery-thumb{padding:4px}.elegoo-gallery-thumb span{font-size:7px}}
+@media(max-width:640px){.elegoo-featured-card{grid-template-columns:1fr}.elegoo-product-media{border-right:0;border-bottom:1px solid var(--line);padding:12px}.elegoo-gallery-main{max-height:none;min-height:0}.elegoo-gallery-thumbnails{gap:6px}.elegoo-gallery-thumb span{font-size:8px}.elegoo-featured-info{padding:20px}}

@@ -13,7 +13,7 @@ document.querySelectorAll('.nav nav a').forEach(a => {
 });
 
 // Route each product inquiry to the home contact area and pass the selected item.
-document.querySelectorAll('[data-product]').forEach(link => {
+document.querySelectorAll('.product-cta[data-product]').forEach(link => {
   const product = link.getAttribute('data-product');
   if (product) link.href = `index.html?producto=${encodeURIComponent(product)}#contacto`;
 });

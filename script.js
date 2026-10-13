@@ -53,55 +53,38 @@ if (filterButtons.length && resinProducts.length) {
         const brands = (product.dataset.brands || '').split(/\s+/);
         product.hidden = selectedBrand !== 'all' && !brands.includes(selectedBrand);
       });
-      const titles = {all:'Explora las resinas',elegoo:'Resinas ELEGOO',anycubic:'Resinas ANYCUBIC',sunlu:'Resinas SUNLU'};
+      const titles = {all:'Las 9 referencias seleccionadas',elegoo:'Resinas ELEGOO',sunlu:'Resinas SUNLU',sirayatech:'Resinas Siraya Tech',phrozen:'Resinas Phrozen'};
       const heading = document.querySelector('#resin-list-title');
       if (heading) heading.textContent = titles[selectedBrand] || titles.all;
     });
   });
 }
 
-// Galería de fotos de ELEGOO ABS-Like Resin V3.0 Pro.
-// Las imágenes van incrustadas en el HTML para evitar rutas rotas en GitHub Pages.
-const elegooGalleryMain = document.querySelector('#elegoo-gallery-main-image');
-const elegooGalleryCaption = document.querySelector('#elegoo-gallery-caption');
-const elegooGalleryThumbs = [...document.querySelectorAll('.elegoo-gallery-thumb')];
-if (elegooGalleryMain && elegooGalleryThumbs.length) {
-  elegooGalleryThumbs.forEach((thumb) => {
+// Galerías genéricas de las nuevas referencias vinculadas a Amazon.
+document.querySelectorAll('.amazon-resin-featured').forEach((card) => {
+  const main = card.querySelector('.amazon-resin-main-image');
+  const fallback = card.querySelector('.resin-image-fallback');
+  const thumbs = [...card.querySelectorAll('.amazon-gallery-thumb')];
+  if (!main || !thumbs.length) return;
+  thumbs.forEach((thumb) => {
     thumb.addEventListener('click', () => {
-      const thumbImage = thumb.querySelector('img');
-      const nextSrc = thumbImage?.currentSrc || thumbImage?.src;
-      if (!nextSrc) return;
-      elegooGalleryMain.src = nextSrc;
-      elegooGalleryMain.alt = thumb.dataset.galleryAlt || 'Imagen del producto ELEGOO ABS-Like Resin V3.0 Pro';
-      elegooGalleryThumbs.forEach((item) => {
-        const active = item === thumb;
-        item.classList.toggle('is-active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      if (elegooGalleryCaption) elegooGalleryCaption.textContent = thumb.dataset.galleryCaption || '';
+      const img = thumb.querySelector('img');
+      const src = img?.currentSrc || img?.src;
+      if (!src) return;
+      main.src = src;
+      main.alt = img?.alt || card.dataset.title || 'Imagen de resina';
+      main.hidden = false;
+      if (fallback) fallback.hidden = true;
+      thumbs.forEach((item) => item.classList.toggle('is-active', item === thumb));
     });
   });
-}
-
-
-// Galería SUNLU ABS-Like Resin. Las cinco imágenes están incrustadas en la ficha para evitar rutas rotas en GitHub Pages.
-const sunluGalleryMain = document.querySelector('#sunlu-gallery-main-image');
-const sunluGalleryCaption = document.querySelector('#sunlu-gallery-caption');
-const sunluGalleryThumbs = [...document.querySelectorAll('.sunlu-gallery-thumb')];
-if (sunluGalleryMain && sunluGalleryThumbs.length) {
-  sunluGalleryThumbs.forEach((thumb) => {
-    thumb.addEventListener('click', () => {
-      const thumbImage = thumb.querySelector('img');
-      const nextSrc = thumbImage?.currentSrc || thumbImage?.src;
-      if (!nextSrc) return;
-      sunluGalleryMain.src = nextSrc;
-      sunluGalleryMain.alt = thumb.dataset.galleryAlt || 'Imagen del producto SUNLU ABS-Like Resin';
-      sunluGalleryThumbs.forEach((item) => {
-        const active = item === thumb;
-        item.classList.toggle('is-active', active);
-        item.setAttribute('aria-pressed', String(active));
-      });
-      if (sunluGalleryCaption) sunluGalleryCaption.textContent = thumb.dataset.galleryCaption || '';
-    });
+  main.addEventListener('load', () => {
+    main.hidden = false;
+    if (fallback) fallback.hidden = true;
   });
-}
+  main.addEventListener('error', () => {
+    main.hidden = true;
+    if (fallback) fallback.hidden = false;
+  });
+  if (main.complete && main.naturalWidth > 0 && fallback) fallback.hidden = true;
+});

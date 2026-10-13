@@ -347,3 +347,38 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
 /* v13: SUNLU ABS-Like Resin gallery reuses the responsive product gallery layout */
 .sunlu-featured-card .elegoo-gallery-badge { border-color: rgba(216,117,45,.8); }
 .sunlu-gallery-thumb.is-active { border-color: #e58a43; }
+
+
+/* v14: fichas de resinas localizadas en Amazon; entrega internacional pendiente de validar */
+.filter-buttons{align-items:center}
+.amazon-resin-featured{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.amazon-resin-media{min-width:0;padding:16px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(145deg,#171b1e,#0b0d0f);border-right:1px solid var(--line)}
+.amazon-resin-gallery-main{position:relative;display:flex;align-items:center;justify-content:center;width:100%;min-height:320px;aspect-ratio:1/1;max-height:520px;overflow:hidden;background:#f1f1ef;border:1px solid rgba(216,117,45,.25)}
+.amazon-resin-gallery-main:after{content:"";position:absolute;inset:12px;border:1px solid rgba(20,22,24,.07);pointer-events:none}
+.amazon-resin-gallery-badge{position:absolute;z-index:2;top:12px;left:12px;max-width:calc(100% - 24px);background:rgba(11,13,15,.92);color:#f5b37a;border:1px solid rgba(216,117,45,.7);padding:7px 9px;font-size:9px;line-height:1.3;font-weight:800;letter-spacing:.08em}
+.amazon-resin-main-image{display:block;width:100%;height:100%;min-height:320px;max-height:520px;object-fit:contain;object-position:center;background:#f1f1ef}
+.resin-image-fallback{width:100%;height:100%;min-height:320px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:radial-gradient(circle at 50% 65%,rgba(216,117,45,.22),transparent 45%),linear-gradient(145deg,#252a2d,#101316);color:#c7cdd0;padding:22px}
+.resin-image-fallback p{font-size:9px;letter-spacing:.18em;color:#b4a08f;font-weight:800;margin:0}
+.fallback-bottle{position:relative;width:112px;height:190px;background:linear-gradient(90deg,#292d30,#4c5154 42%,#1a1d20);border-radius:18px 18px 23px 23px;box-shadow:inset 5px 0 8px #5b6063, inset -6px 0 9px #080a0b,0 16px 25px #0007;display:flex;align-items:center;justify-content:center}
+.fallback-cap{position:absolute;width:52px;height:29px;top:-23px;left:30px;border-radius:4px 4px 2px 2px;background:repeating-linear-gradient(90deg,#666b6d 0 3px,#282d30 3px 6px)}
+.fallback-label{display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;text-align:center;width:94px;min-height:78px;padding:8px 5px;border:1px solid #c56c32;background:linear-gradient(135deg,#e5e7e7,#b7bdc0);color:#15191c;box-shadow:0 2px 5px #0005}
+.fallback-label small{font-size:7px;font-weight:900;letter-spacing:.1em}.fallback-label b{font-size:11px;line-height:1.2;font-weight:900;text-transform:uppercase}.fallback-label em{font-style:normal;font-size:7px;letter-spacing:.1em}
+.amazon-gallery-thumbnails{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:7px}
+.amazon-gallery-thumb{appearance:none;display:flex;flex-direction:column;gap:5px;align-items:stretch;justify-content:flex-start;min-width:0;padding:5px;border:1px solid #343b40;background:#101316;color:#c4c9cc;cursor:pointer;text-align:center}
+.amazon-gallery-thumb:hover,.amazon-gallery-thumb.is-active{border-color:#d8752d;background:#241d17}
+.amazon-gallery-thumb img{width:100%;aspect-ratio:1/1;object-fit:contain;display:block;background:#f1f1ef}
+.amazon-gallery-thumb span{font-size:8px;line-height:1.25;overflow-wrap:anywhere;min-height:20px}
+.amazon-resin-info{display:flex;flex-direction:column;min-width:0}
+.amazon-resin-info .product-info>p:not(.product-category){min-height:0}
+.amazon-resin-info .product-bottom{margin-top:auto}
+.amazon-resin-info .resin-brand-list{display:flex;flex-wrap:wrap;gap:7px;margin-top:15px}
+.amazon-shipping-note{color:#c8cdd0!important;background:#101316;border-left:2px solid #d8752d;padding:10px 11px;margin-top:14px!important;font-size:10px!important;line-height:1.6!important;min-height:0!important}
+.amazon-shipping-note strong{color:#f3b27c}
+.amazon-check-link{display:flex;align-items:center;justify-content:space-between;background:#171d20;color:#dce0e2;border:1px solid #495158;padding:11px 12px;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:3px}
+.amazon-check-link span{font-size:16px;color:#f3b27c}.amazon-check-link:hover{border-color:#d8752d;color:#fff}
+@media(max-width:850px){.amazon-resin-featured{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.amazon-resin-media{padding:12px}.amazon-resin-gallery-main,.amazon-resin-main-image,.resin-image-fallback{min-height:260px}.amazon-gallery-thumbnails{gap:5px}.amazon-gallery-thumb{padding:3px}}
+@media(max-width:640px){.amazon-resin-featured{grid-template-columns:1fr}.amazon-resin-media{border-right:0;border-bottom:1px solid var(--line);padding:12px}.amazon-resin-gallery-main{min-height:0;aspect-ratio:1/1;max-height:none}.amazon-resin-main-image,.resin-image-fallback{min-height:0;aspect-ratio:1/1;max-height:none}.amazon-resin-info{padding:20px}.amazon-gallery-thumbnails{gap:6px}.amazon-gallery-thumb span{font-size:7px}.fallback-bottle{transform:scale(.84)}}
+
+/* v15: ensure the placeholder is only displayed when the product image fails */
+.resin-image-fallback[hidden]{display:none!important}
+.amazon-resin-gallery-main img[hidden]{display:none!important}

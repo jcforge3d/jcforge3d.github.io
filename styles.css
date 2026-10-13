@@ -235,3 +235,110 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
 .elegoo-featured-info>p:not(.product-category){min-height:auto}
 @media(max-width:850px){.elegoo-featured-card{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.elegoo-product-media{padding:13px}.elegoo-gallery-thumbnails{gap:5px}.elegoo-gallery-thumb{padding:4px}.elegoo-gallery-thumb span{font-size:7px}}
 @media(max-width:640px){.elegoo-featured-card{grid-template-columns:1fr}.elegoo-product-media{border-right:0;border-bottom:1px solid var(--line);padding:12px}.elegoo-gallery-main{max-height:none;min-height:0}.elegoo-gallery-thumbnails{gap:6px}.elegoo-gallery-thumb span{font-size:8px}.elegoo-featured-info{padding:20px}}
+
+
+/* v12: galería ELEGOO robusta y responsiva */
+.elegoo-featured-card {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items: stretch;
+}
+.elegoo-product-media {
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border-right: 1px solid var(--line);
+  background: linear-gradient(145deg,#171b1e,#0b0d0f);
+}
+.elegoo-gallery-main {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: clamp(320px, 38vw, 520px);
+  min-height: 320px;
+  max-height: 520px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(216,117,45,.42);
+  background: #f3f3f1;
+}
+.elegoo-gallery-main .product-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  background: #f3f3f1;
+}
+.elegoo-gallery-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0,1fr));
+  gap: 8px;
+  flex: 0 0 auto;
+}
+.elegoo-gallery-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 6px;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #343b40;
+  border-radius: 3px;
+  background: #111518;
+  color: #d3d8db;
+  cursor: pointer;
+  text-align: center;
+}
+.elegoo-gallery-thumb:hover,
+.elegoo-gallery-thumb.is-active {
+  border-color: #e58a43;
+  background: #24201c;
+}
+.elegoo-gallery-thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  background: #f3f3f1;
+  margin: 0;
+}
+.elegoo-gallery-thumb span {
+  display: block;
+  min-height: 2.4em;
+  overflow-wrap: anywhere;
+  font-size: clamp(8px, .75vw, 10px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+.elegoo-gallery-caption {
+  min-height: 2.8em;
+  margin: 0;
+  color: #aeb6bb;
+  font-size: 11px;
+  line-height: 1.55;
+}
+.elegoo-featured-info { min-width: 0; padding: 22px; }
+.elegoo-featured-info .product-bottom { margin-top: auto; padding-top: 18px; }
+@media (max-width: 850px) {
+  .elegoo-featured-card { grid-template-columns: minmax(0,1fr); }
+  .elegoo-product-media { border-right: 0; border-bottom: 1px solid var(--line); padding: 14px; }
+  .elegoo-gallery-main { height: clamp(280px, 66vw, 480px); min-height: 280px; }
+  .elegoo-featured-info { padding: 22px; }
+}
+@media (max-width: 520px) {
+  .elegoo-product-media { padding: 12px; }
+  .elegoo-gallery-main { height: clamp(250px, 83vw, 380px); min-height: 250px; }
+  .elegoo-gallery-thumbnails { gap: 5px; }
+  .elegoo-gallery-thumb { padding: 4px; gap: 4px; }
+  .elegoo-gallery-thumb span { font-size: 8px; letter-spacing: 0; }
+  .elegoo-gallery-caption { font-size: 10px; }
+  .elegoo-featured-info { padding: 18px; }
+}

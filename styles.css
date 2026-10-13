@@ -137,3 +137,19 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
 .shop-order-cta{margin-top:20px}
 @media(max-width:850px){.shop-page-hero{grid-template-columns:1fr;min-height:auto;padding-top:55px;text-align:center}.shop-page-hero .actions{justify-content:center}.shop-page-hero .lead{margin-left:auto;margin-right:auto}.shop-page-badge{width:205px;grid-row:1;grid-column:1}.shop-page-badge span{font-size:70px}.shop-page-badge b{font-size:19px}}
 @media(max-width:520px){.shop-page-hero{padding-left:20px;padding-right:20px}.shop-page-hero h1{font-size:56px}}
+
+
+/* Categoría adicional: filamentos para impresoras FDM */
+.shop-strip{grid-template-columns:repeat(5,minmax(0,1fr))}
+.filament-art{background:radial-gradient(ellipse at 50% 80%,rgba(216,117,45,.18),transparent 55%),linear-gradient(145deg,#20262b,#0a0c0e)}
+.filament-tech-art{background:radial-gradient(ellipse at 50% 80%,rgba(105,157,190,.15),transparent 55%),linear-gradient(145deg,#20262b,#0a0c0e)}
+.filament-spools{width:180px;height:140px;position:relative;z-index:1;filter:drop-shadow(0 16px 12px rgba(0,0,0,.55))}
+.spool{position:absolute;display:block;width:76px;height:94px;border-radius:12px 12px 8px 8px;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0 3px,rgba(255,255,255,.09) 3px 4px),linear-gradient(100deg,#b94817,#f08a3c 35%,#9b3f16 82%,#60240f);border:1px solid rgba(255,255,255,.15);box-shadow:inset 7px 0 8px rgba(255,255,255,.08),inset -8px 0 8px rgba(0,0,0,.25)}
+.spool:before{content:"";position:absolute;left:15px;right:15px;top:-2px;height:15px;border-radius:50%;background:linear-gradient(135deg,#d0d4d5,#525b60);border:3px solid #252b30;box-shadow:0 0 0 3px rgba(255,255,255,.05)}
+.spool:after{content:"";position:absolute;left:18px;right:18px;bottom:-2px;height:13px;border-radius:50%;background:linear-gradient(90deg,#1c2226,#596268,#20262a);border:1px solid rgba(255,255,255,.15)}
+.spool-orange{left:14px;top:28px;transform:rotate(-10deg)}
+.spool-silver{left:56px;top:12px;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0 3px,rgba(255,255,255,.12) 3px 4px),linear-gradient(100deg,#727e85,#d5dadd 35%,#7d888e 82%,#454e54);transform:rotate(3deg)}
+.spool-blue{right:9px;top:31px;background:repeating-linear-gradient(0deg,rgba(0,0,0,.04) 0 3px,rgba(255,255,255,.1) 3px 4px),linear-gradient(100deg,#16445d,#3c88ad 35%,#1d5a7a 82%,#103246);transform:rotate(10deg)}
+.shop-strip div{border-right:1px solid var(--line)}
+@media(max-width:850px){.shop-strip{grid-template-columns:repeat(3,minmax(0,1fr))}.shop-strip div:nth-child(3){border-right:0}.shop-strip div:nth-child(4),.shop-strip div:nth-child(5){border-top:1px solid var(--line)}}
+@media(max-width:520px){.shop-strip{grid-template-columns:1fr 1fr}.shop-strip div:nth-child(2){border-right:0}.shop-strip div:nth-child(3){border-right:1px solid var(--line);border-top:1px solid var(--line)}.shop-strip div:nth-child(4){border-right:0;border-top:1px solid var(--line)}.shop-strip div:nth-child(5){grid-column:span 2;border-top:1px solid var(--line)}}

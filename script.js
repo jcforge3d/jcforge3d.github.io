@@ -82,3 +82,26 @@ if (elegooGalleryMain && elegooGalleryThumbs.length) {
     });
   });
 }
+
+
+// Galería SUNLU ABS-Like Resin. Las cinco imágenes están incrustadas en la ficha para evitar rutas rotas en GitHub Pages.
+const sunluGalleryMain = document.querySelector('#sunlu-gallery-main-image');
+const sunluGalleryCaption = document.querySelector('#sunlu-gallery-caption');
+const sunluGalleryThumbs = [...document.querySelectorAll('.sunlu-gallery-thumb')];
+if (sunluGalleryMain && sunluGalleryThumbs.length) {
+  sunluGalleryThumbs.forEach((thumb) => {
+    thumb.addEventListener('click', () => {
+      const thumbImage = thumb.querySelector('img');
+      const nextSrc = thumbImage?.currentSrc || thumbImage?.src;
+      if (!nextSrc) return;
+      sunluGalleryMain.src = nextSrc;
+      sunluGalleryMain.alt = thumb.dataset.galleryAlt || 'Imagen del producto SUNLU ABS-Like Resin';
+      sunluGalleryThumbs.forEach((item) => {
+        const active = item === thumb;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      if (sunluGalleryCaption) sunluGalleryCaption.textContent = thumb.dataset.galleryCaption || '';
+    });
+  });
+}

@@ -342,3 +342,8 @@ footer{padding:40px 25px;text-align:center;border-top:1px solid var(--line);back
   .elegoo-gallery-caption { font-size: 10px; }
   .elegoo-featured-info { padding: 18px; }
 }
+
+
+/* v13: SUNLU ABS-Like Resin gallery reuses the responsive product gallery layout */
+.sunlu-featured-card .elegoo-gallery-badge { border-color: rgba(216,117,45,.8); }
+.sunlu-gallery-thumb.is-active { border-color: #e58a43; }
